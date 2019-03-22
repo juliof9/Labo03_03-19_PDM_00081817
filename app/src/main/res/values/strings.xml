@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Labo03</string>
+    <string name="user_name">User</string>
+    <string name="password_name">Password</string>
+    <string name="gender_type">Gender</string>
+    <string name="email_user">Email</string>
+    <string name="submit_button1">SUBMIT</string>
+    <string name="button_compartir">Compartir</string>
+    <string name="shared_activity">Shared Activity</string>
 </resources>

@@ -5,19 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:padding="15sp"
     tools:context=".ShareActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shared Activity"
+        android:layout_gravity="center"
+        android:text="@string/shared_activity"
         android:textSize="28sp"/>
 
     <TextView
         android:id="@+id/shared_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TExto quemado"/>
+        android:layout_height="wrap_content"/>
 
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t4"/>
 </LinearLayout>
