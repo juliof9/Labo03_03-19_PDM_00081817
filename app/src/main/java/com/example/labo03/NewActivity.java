@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 public class NewActivity extends AppCompatActivity {
@@ -14,13 +16,26 @@ public class NewActivity extends AppCompatActivity {
     TextView mText1, mText2, mText3, mText4;
     Button mSubmitAction;
     String text_aux, dato2, dato3, dato4;
+    JSONObject jsonx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
+        jsonx=new JSONObject();
+
         recibirdatos();
+
+        try{
+            jsonx.put("user", text_aux);
+            jsonx.put("password", dato2);
+            jsonx.put("email", dato3);
+            jsonx.put("gender", dato4);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         mSubmitAction.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,10 +45,7 @@ public class NewActivity extends AppCompatActivity {
                 m_intent2.setAction(Intent.ACTION_SEND);
                 m_intent2.setType("text/plain");
 
-                m_intent2.putExtra(Intent.EXTRA_TEXT, text_aux);
-                m_intent2.putExtra(Intent.EXTRA_TEXT, dato2);
-                m_intent2.putExtra(Intent.EXTRA_TEXT, dato3);
-                m_intent2.putExtra(Intent.EXTRA_TEXT, dato4);
+                m_intent2.putExtra(Intent.EXTRA_TEXT, jsonx.toString());
 
                 startActivity(m_intent2);
             }
